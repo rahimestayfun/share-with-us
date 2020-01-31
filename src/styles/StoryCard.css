@@ -1,0 +1,12 @@
+.storyCard{
+    margin:auto;
+    width: 1000px;
+    height: 350px;
+    border:1px solid black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.storyImage{
+    width: 400px;
+    height: 150px;
+}

@@ -1,0 +1,13 @@
+.formContainer{
+    width: 550px;
+    
+    border: 1px solid black;
+    line-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 50px;
+    box-sizing: border-box;
+}
