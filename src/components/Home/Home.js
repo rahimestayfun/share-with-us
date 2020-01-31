@@ -7,7 +7,8 @@ class Home extends React.Component {
       super();
       this.state = {
         stories: [],
-        showDetailStatus: false
+        showDetailStatus: false,
+        adminStatus:true
       };
     }
     componentDidMount() {
@@ -18,16 +19,27 @@ class Home extends React.Component {
           this.setState({ stories: response.data });
         })
         .catch(error => console.log(error));
+        
+      //another axios request to see if user is 
+      axios.get("/api/admin").then(response => {
+        this.setState({ adminStatus: response.data.isAdmin });
+      });
+    
+    }
+    handleLogout=()=>{
+      // const{username,password}= this.state;
+      // let body = {username,password}
+      axios.put("/api/logout",).then(response=>{
+        // console.log(response.data)
+        this.setState({adminStatus:response.data.isAdmin})
+      })
+    }
 
-      //another axios request to see if user is admin
-    }
-    showDetail=()=>{
-      const {showDetailStatus}= this.state;
-      this.setState({showDetailStatus:true})
-      console.log(showDetailStatus);
-    }
+
+  
     render() {
-      const { stories,showDetailStatus } = this.state;
+      console.log(this.state.adminStatus)
+      const { stories} = this.state;
       let mappedStories = stories.map(el => {
         return (
           <StoryCard
@@ -38,8 +50,8 @@ class Home extends React.Component {
             image={el.image}
             category={el.category}
             content={el.content}
-            showDetail={this.showDetail}
-            showDetailStatus={showDetailStatus}
+            // showDetail={this.showDetail}
+            // showDetailStatus={showDetailStatus}
           />
         );
       });
@@ -47,7 +59,11 @@ class Home extends React.Component {
      
         <div >
           <section className="app">
-            <Link to="/admin"><button>Login As Admin</button></Link>
+            {
+              this.state.adminStatus 
+                ? <button onClick={this.handleLogout}>Logout</button>
+                : <Link to="/admin"><button>Login As Admin</button></Link>
+            }
             <p className="quote">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text

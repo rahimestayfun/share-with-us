@@ -12,7 +12,6 @@ class AddStory extends React.Component {
       image:"",
       category:"",
       redirect: false
-
     };
   }
   handleInputChange=(e)=>{

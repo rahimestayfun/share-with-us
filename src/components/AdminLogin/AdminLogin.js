@@ -1,22 +1,32 @@
 import React from "react";
 import './../../styles/AdminLogin.css'
+import axios from "axios";
+import { Link } from "react-router-dom";
+
 class AdminLogin extends React.Component {
   constructor() {
     super();
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      // isAdmin:false
     };
   }
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-//   handleLogin=()=>{
-
-
-//   }
+  handleLogin=()=>{
+    const{username,password}= this.state;
+    let body = {username,password}
+    axios.put("/api/login",body).then(response=>{
+      console.log(response.data)
+      // this.setState({isAdmin:response.data})
+    })
+  }
   render() {
+    // console.log(this.state.isAdmin);
     return (
+
       <div className="login">
         <input
           type="text"
@@ -30,7 +40,8 @@ class AdminLogin extends React.Component {
           name="password"
           onChange={this.handleChange}
         />
-        <button>LOGIN</button>
+
+       <Link to="/"> <button onClick={this.handleLogin}>LOGIN</button> </Link>
       </div>
     );
   }

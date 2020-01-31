@@ -1,4 +1,7 @@
-const admin = {
+let admin = {
     username: 'easy',
-    password: 'password'
+    password: 'qwe',
+    isAdmin: false,
 }
+
+module.exports = admin
