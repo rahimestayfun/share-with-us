@@ -11,8 +11,7 @@ class DetailedStoryCard extends React.Component {
       story:{},
       adminStatus: false,
       redirect:false,
-      
-      // stories:[]
+  
     };
   }
   componentDidMount() {
@@ -25,9 +24,7 @@ class DetailedStoryCard extends React.Component {
       this.setState({ adminStatus: response.data.isAdmin });
     });
   }
-  // getAdminStatus=()=>{
-
-  // }
+ 
 
   handleDelete=(id)=>{
     axios.delete(`/api/stories/${id}`).then(response=>{

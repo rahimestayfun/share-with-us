@@ -1,7 +1,7 @@
 let stories = require('./../stories');
 let id = 3;
 let adminInfo = require('../admin');
-// let isAdmin = false;
+
 
 getStories=(req,res)=>{
     res.status(200).json(stories);
@@ -27,10 +27,9 @@ addStory=(req,res)=>{
 adminLogin=(req,res)=>{
     const {username,password}= req.body
     // console.log(username, password)
-    // console.log(adminInfo.username, adminInfo.password)
+
     if(username == adminInfo.username && password == adminInfo.password){
         adminInfo = {username:username, password:password, isAdmin: true}
-        // adminInfo.isAdmin = !adminInfo.isAdmin;
         res.status(200).json(adminInfo);
     }else{
         res.sendStatus(401)
@@ -38,9 +37,8 @@ adminLogin=(req,res)=>{
 };
 adminLogout=(req,res)=>{
     const {username,password}= req.body  
-    // adminInfo = {username,password,isAdmin: false}
-    adminInfo = {isAdmin: false}
-        // adminInfo.isAdmin = !adminInfo.isAdmin;
+    adminInfo = {username,password,isAdmin: false}
+    // adminInfo = {isAdmin: false}
     res.status(200).json(adminInfo);
 };
 
