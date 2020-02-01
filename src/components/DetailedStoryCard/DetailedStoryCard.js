@@ -2,25 +2,23 @@ import React from "react";
 
 import "./../../styles/DetailedStoryCard.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link,Redirect } from "react-router-dom";
 
 class DetailedStoryCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       story:{},
-      adminStatus: false
+      adminStatus: false,
+      redirect:false,
+      // stories:[]
     };
   }
   componentDidMount() {
     const { id } = this.props.match.params;
     axios.get(`/api/stories/${id}`).then(response => {
-      console.log(response.data)
-
-      // this.setState({ story: [response.data]});
-      this.setState({ story: response.data[0]});
-      // this.setState({ story: response.data[story.id] });
-      
+      // console.log(response.data);
+      this.setState({ story: response.data[0]});     
     });
     axios.get("/api/admin").then(response => {
       this.setState({ adminStatus: response.data.isAdmin });
@@ -30,8 +28,20 @@ class DetailedStoryCard extends React.Component {
 
   // }
 
+  handleDelete=(id)=>{
+    axios.delete(`/api/stories/${id}`).then(response=>{
+      console.log(response);
+      this.setState({redirect: true})
+    });
+    
+
+  }
+
   render() {
     const { story } = this.state;
+    if(this.state.redirect === true){
+      return <Redirect to="/"/>;
+    }
     console.log(story)
     return (
       <div key={story.id} className="detailedStory">
@@ -45,7 +55,7 @@ class DetailedStoryCard extends React.Component {
         {this.state.adminStatus ? (
           <div>
             <button>Edit</button>
-            <button>Delete</button>
+            <button onClick={()=>this.handleDelete(story.id)}>Delete</button>
           </div>
         ) : null}
       </div>

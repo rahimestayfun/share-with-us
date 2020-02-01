@@ -21,7 +21,7 @@ getStory=(req,res)=>{
 addStory=(req,res)=>{
     id++;
     // const {name,title,category,image,content}= req.body;
-    stories.push({...req.body,id});
+    stories.push({id,...req.body});
     res.status(200).json(stories);
 };
 adminLogin=(req,res)=>{
@@ -37,7 +37,8 @@ adminLogin=(req,res)=>{
     }
 };
 adminLogout=(req,res)=>{
-    // const {username,password}= req.body  
+    const {username,password}= req.body  
+    // adminInfo = {username,password,isAdmin: false}
     adminInfo = {isAdmin: false}
         // adminInfo.isAdmin = !adminInfo.isAdmin;
     res.status(200).json(adminInfo);
@@ -48,10 +49,14 @@ getAdminStatus = (req, res) => {
     res.status(200).json(adminInfo)
 };
 
-editStory=()=>{
-
+deleteStory = (req,res)=>{
+    let storyId = +req.params.id;
+    let index = stories.findIndex(el=> el.id === storyId);
+    stories.splice(index,1);
+    res.status(200).json(stories);
+    console.log(stories);
 };
-deleteStory = ()=>{
+editStory=()=>{
 
 };
 
