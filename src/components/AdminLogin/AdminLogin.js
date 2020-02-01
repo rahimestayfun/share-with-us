@@ -19,7 +19,7 @@ class AdminLogin extends React.Component {
     const{username,password}= this.state;
     let body = {username,password}
     axios.put("/api/login",body).then(response=>{
-      console.log(response.data)
+      // console.log(response.data)
       // this.setState({isAdmin:response.data})
     })
   }

@@ -6,6 +6,7 @@ import AddStory from './components/AddStory/AddStory';
 import AdminLogin from './components/AdminLogin/AdminLogin';
 import Home from "./components/Home/Home";
 import DetailedStoryCard from "./components/DetailedStoryCard/DetailedStoryCard";
+import EditStory from "./components/EditStory/EditStory";
 
 export default(
     <Switch>
@@ -13,5 +14,6 @@ export default(
         <Route path="/admin" component={AdminLogin}/>
         <Route path="/add" component={AddStory}/>
         <Route path="/stories/:id" component={DetailedStoryCard}/>
+        <Route path="/story/:id" component={EditStory}/>
     </Switch>
 );

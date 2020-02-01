@@ -9,6 +9,7 @@ class Home extends React.Component {
         stories: [],
         showDetailStatus: false,
         adminStatus:true
+        
       };
     }
     componentDidMount() {
@@ -38,14 +39,14 @@ class Home extends React.Component {
 
   
     render() {
-      console.log(this.state.adminStatus)
+      // console.log(this.state.adminStatus)
       const { stories} = this.state;
       let mappedStories = stories.map(el => {
         return (
           <StoryCard
             key={el.id}
             id={el.id}
-            name={el.name}
+            fullName={el.fullName}
             title={el.title}
             image={el.image}
             category={el.category}

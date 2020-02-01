@@ -8,8 +8,8 @@ app.use(express.json());
 app.get('/api/stories',getStories);
 app.get("/api/stories/:id", getStory);
 app.post('/api/stories', addStory);
-app.put('/api/stories/:id',editStory);
 app.delete('/api/stories/:id',deleteStory);
+app.put('/api/stories/:id',editStory);
 
 //for admin 
 app.get('/api/admin',getAdminStatus);

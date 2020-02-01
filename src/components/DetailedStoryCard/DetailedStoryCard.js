@@ -11,6 +11,7 @@ class DetailedStoryCard extends React.Component {
       story:{},
       adminStatus: false,
       redirect:false,
+      
       // stories:[]
     };
   }
@@ -31,10 +32,8 @@ class DetailedStoryCard extends React.Component {
   handleDelete=(id)=>{
     axios.delete(`/api/stories/${id}`).then(response=>{
       console.log(response);
-      this.setState({redirect: true})
+      this.setState({redirect:true})
     });
-    
-
   }
 
   render() {
@@ -42,11 +41,11 @@ class DetailedStoryCard extends React.Component {
     if(this.state.redirect === true){
       return <Redirect to="/"/>;
     }
-    console.log(story)
+    // console.log(story)
     return (
-      <div key={story.id} className="detailedStory">
+      <div id={story.id} className="detailedStory">
         <h2>{story.title}</h2>
-        <h3>By {story.name} </h3>
+        <h3>By {story.fullName} </h3>
         <img src={story.image} alt="random" className="detailedSImage" />
         <p>{story.content}</p>
         <Link to="/">
@@ -54,7 +53,7 @@ class DetailedStoryCard extends React.Component {
         </Link>
         {this.state.adminStatus ? (
           <div>
-            <button>Edit</button>
+           <Link to={`/story/${story.id}`}><button>Edit</button></Link>
             <button onClick={()=>this.handleDelete(story.id)}>Delete</button>
           </div>
         ) : null}

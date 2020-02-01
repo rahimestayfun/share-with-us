@@ -10,15 +10,15 @@ class StoryCard extends React.Component {
       // showDetailStatus: false
     };
   }
-  showDetail = () => {
-    const { showDetailStatus } = this.state;
-    this.setState({ showDetailStatus: !showDetailStatus });
-    console.log(showDetailStatus);
-  };
+  // showDetail = () => {
+  //   const { showDetailStatus } = this.state;
+  //   this.setState({ showDetailStatus: !showDetailStatus });
+  //   console.log(showDetailStatus);
+  // };
   
   render() {
     // const { showDetailStatus } = this.state;
-    const { image, title, name, id, content } = this.props;
+    const { image, title, fullName, id, content } = this.props;
     let firstSentence = content.split(".")[0];
 
     return (
@@ -38,7 +38,7 @@ class StoryCard extends React.Component {
             <img src={image} alt="memory" className="storyImage" />
             <h2>{title}</h2>
             <h4>{firstSentence}</h4>
-            <p>By {name}</p>
+            <p>By {fullName}</p>
             <Link to={`/stories/${id}`}><button>Show More</button></Link>
           </div>
       //   )}

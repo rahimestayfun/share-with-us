@@ -1,7 +1,7 @@
 let stories = [
   {
     id: 0,
-    name: "Tom Patterson",
+    fullName: "Tom Patterson",
     title: "My First Day on a New Job",
     category: "Marketing",
     image: "https://i.ytimg.com/vi/mHY7MhCNoqs/maxresdefault.jpg",
@@ -10,7 +10,7 @@ let stories = [
   },
   {
     id:1,
-    name: "Frank Smith",
+    fullName: "Frank Smith",
     title: "First day experience",
     category: "Technology",
     image: "https://fisher.osu.edu/blogs/gradlife/files/Microsoft.jpg",
@@ -20,7 +20,7 @@ let stories = [
   {
     id: 2,
     title:"The beginning of the new world.",
-    name: "Sally Burnside",
+    fullName: "Sally Burnside",
     category: "Technology",
     image: "https://fisher.osu.edu/blogs/gradlife/files/Microsoft.jpg",
       content:

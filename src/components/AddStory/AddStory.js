@@ -6,7 +6,7 @@ class AddStory extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: "",
+      fullName: "",
       title:"",
       content:"",
       image:"",
@@ -22,18 +22,13 @@ class AddStory extends React.Component {
 
   handleAdd=(e)=>{
     e.preventDefault();
-    let {name,title,content,image,category}= this.state;
-    let newStory = {name,title,content,image,category};
+    let {fullName,title,content,image,category}= this.state;
+    let newStory = {fullName,title,content,image,category};
     axios.post('/api/stories',newStory).then(() => {
       this.setState({redirect:true})
     })
     
   }
-
-
-
-
-
 
 
   render() {
@@ -43,7 +38,7 @@ class AddStory extends React.Component {
     return (
       <form className="formContainer">
         <label htmlFor="name">What's your name</label>
-        <input type="text" name="name" placeholder="full name" onChange={this.handleInputChange} value={this.state.name} />
+        <input type="text" name="fullName" placeholder="full name" onChange={this.handleInputChange} value={this.state.fullName} />
         <label htmlFor="feeling">How was your first day at work?</label>
         <textarea name="content" onChange={this.handleInputChange} value={this.state.content}></textarea>
         <label htmlFor="sentence">
