@@ -21,7 +21,7 @@ getStory=(req,res)=>{
 addStory=(req,res)=>{
     id++;
     // const {fullName,title,category,image,content}= req.body;
-    stories.push({id,...req.body});
+    stories.unshift({id,...req.body});
     res.status(200).json(stories);
 };
 adminLogin=(req,res)=>{

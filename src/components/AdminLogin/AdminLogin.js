@@ -26,8 +26,11 @@ class AdminLogin extends React.Component {
   render() {
     // console.log(this.state.isAdmin);
     return (
+      <main>
+        <div className="header"></div>
 
       <div className="login">
+        <h3>Admin Login</h3>
         <input
           type="text"
           placeholder="username"
@@ -41,8 +44,9 @@ class AdminLogin extends React.Component {
           onChange={this.handleChange}
         />
 
-       <Link to="/"> <button onClick={this.handleLogin}>LOGIN</button> </Link>
+       <Link to="/"> <button onClick={this.handleLogin}>Login</button> </Link>
       </div>
+      </main>
     );
   }
 }

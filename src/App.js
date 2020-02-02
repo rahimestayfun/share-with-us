@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./components/Header/Header";
+// import Header from "./components/Header/Header";
 // import Home from './components/Home/Home'
 
 import "./App.css";
@@ -16,7 +16,7 @@ class App extends React.Component {
     return (
       <HashRouter>
         <div>
-          <Header />
+          {/* <Header /> */}
           {routes}
         </div>
       </HashRouter>

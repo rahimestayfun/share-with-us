@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
 import StoryCard from "./../StoryCard/StoryCard";
+import Footer from "../Footer/Footer"
 import { Link } from "react-router-dom";
+import Header from '../Header/Header'
 class Home extends React.Component {
   constructor() {
     super();
@@ -10,7 +12,8 @@ class Home extends React.Component {
       showDetailStatus: false,
       adminStatus: true,
       username: "easy",
-      password: "qwe"
+      password: "qwe",
+      searchInput:"",
     };
   }
   componentDidMount() {
@@ -35,10 +38,13 @@ class Home extends React.Component {
       this.setState({ adminStatus: response.data.isAdmin });
     });
   };
+  handleInputChange=(e)=>{
+    this.setState({[e.target.name]:e.target.value})
+  }
 
   render() {
     console.log(this.state.adminStatus);
-    const { stories } = this.state;
+    const { stories,searchInput } = this.state;
     let mappedStories = stories.map(el => {
       return (
         <StoryCard
@@ -52,27 +58,54 @@ class Home extends React.Component {
         />
       );
     });
+
+    let filteredStories = stories.filter(el=>{
+      return el.category.toLowerCase().includes(searchInput.toLocaleLowerCase());
+    }).map(el=>{
+      return (
+        <StoryCard
+          key={el.id}
+          id={el.id}
+          fullName={el.fullName}
+          title={el.title}
+          image={el.image}
+          category={el.category}
+          content={el.content}
+          searchInput={searchInput}
+        />
+      );
+    });
+
+
     return (
       <div>
+        <Header/>
         <section className="app">
           {this.state.adminStatus ? (
-            <button onClick={this.handleLogout}>Logout</button>
+            <button onClick={this.handleLogout} className="admin">Logout</button>
           ) : (
             <Link to="/admin">
-              <button>Login As Admin</button>
+              <button className="admin">Admin Login</button>
             </Link>
           )}
-          <p className="quote">
+          <div className="quote-add-container">
+            <div className="quote-container">
+          <p id="quote">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book.
           </p>
+          </div>
+          
           <Link to="/add">
-            <button>Would you like to add your story?</button>
+            <button id="add">Would you like to share your story?</button>
           </Link>
+          </div>
+          <input id="search" name="searchInput" placeholder="Search for category" onChange={this.handleInputChange}></input>
         </section>
-        {mappedStories}
+        {!searchInput? mappedStories: filteredStories}
+        <Footer/>
       </div>
     );
   }

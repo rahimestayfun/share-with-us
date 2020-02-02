@@ -1,12 +1,71 @@
-.storyCard{
-    margin:auto;
-    width: 1000px;
-    height: 350px;
-    border:1px solid black;
-    text-align: center;
-    margin-bottom: 20px;
+.showLink {
+  text-decoration: none;
+  /* color: black; */
 }
-.storyImage{
-    width: 400px;
-    height: 150px;
+
+.storyCard {
+  margin: auto;
+  width: 850px;
+  height: 200px;
+  /* border:1px solid black; */
+  /* text-align: center; */
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.58);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.58);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.58);
+  /* border: 1px solid #eeeef1; */
+  background-color: #f9f9fa;
+}
+.story-image-container {
+  width: 270px;
+  height: 100%;
+  /* border:1px solid red; */
+}
+#storyImage {
+  /* width: 150px;
+    height: 100px; */
+  /* background-size: cover; */
+  width: 100%;
+  height: 100%;
+}
+.story-info-container {
+  width: 600px;
+  height: 100%;
+  /* border: 1px solid blue; */
+  display: inline-block;
+  /* text-align: center; */
+  padding: 20px;
+  box-sizing: border-box;
+}
+.title-container {
+  margin-bottom: 25px;
+  font-size: 20px;
+  color: #000000;
+}
+.sentence-container {
+  margin-bottom: 25px;
+  font-size: 17px;
+  color: #3b3b4f;
+  font-weight: 500;
+}
+.name-container {
+  float: left;
+  display: flex;
+  color: rgb(117, 115, 115);
+}
+
+li {
+  list-style-type: none;
+}
+#avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+#author {
+  font-size: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
 }

@@ -2,59 +2,78 @@ import React from "react";
 
 import "./../../styles/DetailedStoryCard.css";
 import axios from "axios";
-import { Link,Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 class DetailedStoryCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      story:{},
+      story: {},
       adminStatus: false,
-      redirect:false,
-  
+      redirect: false
     };
   }
   componentDidMount() {
     const { id } = this.props.match.params;
     axios.get(`/api/stories/${id}`).then(response => {
       // console.log(response.data);
-      this.setState({ story: response.data[0]});     
+      this.setState({ story: response.data[0] });
     });
     axios.get("/api/admin").then(response => {
       this.setState({ adminStatus: response.data.isAdmin });
     });
   }
- 
 
-  handleDelete=(id)=>{
-    axios.delete(`/api/stories/${id}`).then(response=>{
+  handleDelete = id => {
+    axios.delete(`/api/stories/${id}`).then(response => {
       console.log(response);
-      this.setState({redirect:true})
+      this.setState({ redirect: true });
     });
-  }
+  };
 
   render() {
     const { story } = this.state;
-    if(this.state.redirect === true){
-      return <Redirect to="/"/>;
+    if (this.state.redirect === true) {
+      return <Redirect to="/" />;
     }
     // console.log(story)
     return (
-      <div id={story.id} className="detailedStory">
-        <h2>{story.title}</h2>
-        <h3>By {story.fullName} </h3>
-        <img src={story.image} alt="random" className="detailedSImage" />
-        <p>{story.content}</p>
-        <Link to="/">
-          <h1>X</h1>
-        </Link>
-        {this.state.adminStatus ? (
-          <div>
-           <Link to={`/story/${story.id}`}><button>Edit</button></Link>
-            <button onClick={()=>this.handleDelete(story.id)}>Delete</button>
-          </div>
-        ) : null}
-      </div>
+      <main>
+        <div className="header"></div>
+        <section id={story.id} className="detailedStory">
+          <Link to="/">
+            <h1 id="exit">X</h1>
+          </Link>
+          <h1 id="detailedSTitle">{story.title}</h1>
+          <img src={story.image} alt="random" id="detailedSImage" />
+          <ul className="avatar-name-container">
+            <li>
+              <img
+                id="avatar"
+                alt="avatar"
+                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+              />
+            </li>
+            <li>
+              <h3>{story.fullName} </h3>
+            </li>
+          </ul>
+
+          <p id="detailedSContent">{story.content}</p>
+          {this.state.adminStatus ? (
+        
+              <div className="button-container">
+              <Link to={`/story/${story.id}`}>
+                <button>Edit</button>
+              </Link>
+              <button onClick={() => this.handleDelete(story.id)}>
+                Delete
+              </button>
+              </div>
+        
+          ) : null}
+        </section>
+      </main>
     );
   }
 }
