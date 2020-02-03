@@ -61,6 +61,7 @@ class Home extends React.Component {
           image={el.image}
           category={el.category}
           content={el.content}
+          likeCount={el.likeCount}
         />
       );
     });
@@ -82,6 +83,7 @@ class Home extends React.Component {
             category={el.category}
             content={el.content}
             searchInput={searchInput}
+            likeCount={el.likeCount}
           />
         );
       });

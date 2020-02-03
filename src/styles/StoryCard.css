@@ -53,8 +53,10 @@
   font-weight: 500;
 }
 .name-container {
-  float: left;
+  /* float: left; */
   display: flex;
+  justify-content:flex-start;
+  align-items: center;
   color: rgb(117, 115, 115);
 }
 
@@ -68,6 +70,6 @@ li {
 }
 #author {
   font-size: 20px;
-  margin-top: 5px;
-  margin-left: 5px;
+  /* margin-top: 5px;
+  margin-left: 5px; */
 }

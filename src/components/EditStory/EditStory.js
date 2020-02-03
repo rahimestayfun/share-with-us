@@ -78,6 +78,7 @@ class EditStory extends React.Component {
         <Header/>
         {/* <div className="header"></div> */}
       <div className="edit-container">
+
         <label>What's your name</label>
         <textarea
           name="fullName"

@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const {getStories,addStory,editStory,deleteStory,getAdminStatus,getStory,adminLogin,adminLogout} = require('./controllers/storyController')
+const {getStories,addStory,editStory,deleteStory,getAdminStatus,getStory,adminLogin,adminLogout,editLikeCount} = require('./controllers/storyController')
 
 app.use(express.json());
 
@@ -15,6 +15,10 @@ app.put('/api/stories/:id',editStory);
 app.get('/api/admin',getAdminStatus);
 app.put('/api/login', adminLogin);
 app.put('/api/logout', adminLogout);
+
+//for likeCount
+// app.get('/api/stories/:id',getLikeCount);
+app.put('/api/story/:id',editLikeCount);
 
 
 const PORT= 3030;

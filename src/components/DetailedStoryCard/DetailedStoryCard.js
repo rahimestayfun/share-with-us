@@ -1,11 +1,12 @@
-import React from "react";
+import React, { createFactory } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import LikeButton from "../LikeButton/LikeButton"
+// import LikeButton from "../LikeButton/LikeButton"
 
 import "./../../styles/DetailedStoryCard.css";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
+
 
 class DetailedStoryCard extends React.Component {
   constructor(props) {
@@ -14,7 +15,6 @@ class DetailedStoryCard extends React.Component {
       story: {},
       adminStatus: false,
       redirect: false,
-      likes:0
     };
   }
   componentDidMount() {
@@ -35,17 +35,27 @@ class DetailedStoryCard extends React.Component {
     });
   };
 
-  incrementLike=()=>{
-    let newLikeCount = this.state.likes+1;
-    this.setState({likes:newLikeCount})
-  }
+
+incrementLike=(id)=>{
+ let story = {...this.state.story};
+   axios.put(`/api/story/${id}`,story)
+   .then(response=>
+    this.setState({story:response.data})
+    // console.log(response.data)
+   )}
+
+
+
+
+  
 
   render() {
     const { story} = this.state;
+    
     if (this.state.redirect === true) {
       return <Redirect to="/" />;
     }
-    console.log(this.state.likes)
+    console.log(this.state.story)
     return (
       <main>
         {/* <div className="header"></div> */}
@@ -64,16 +74,13 @@ class DetailedStoryCard extends React.Component {
                 src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
               />
             </li>
-            <li className="name-container">
+            <li className="fname-container">
               <h3>{story.fullName} </h3>
             </li>
-            <li  className="like-container">
-               <LikeButton
-              key={this.state.story.id}
-              id={this.state.story.id}
-              likes={this.state.likes}
-              incrementLike={this.incrementLike}/>
-            </li>
+            <li onClick={()=>this.incrementLike(story.id)}>
+                <span role="img" aria-label="like">❤️</span>
+                <span>{story.likeCount}</span>
+              </li>
           </ul>
 
           <p id="detailedSContent">{story.content}</p>

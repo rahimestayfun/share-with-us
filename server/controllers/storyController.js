@@ -76,6 +76,37 @@ editStory=(req,res)=>{
     res.status(200).json(stories);
 };
 
+editLikeCount=(req,res)=>{
+    let storyId = +req.params.id;
+    const {fullName,title,category,image,content} = req.body;
+    let {likeCount} = req.body;
+    let index = stories.findIndex(el=> el.id === storyId);
+    console.log(index)
+    // stories[index]={
+    //     id:id,
+    //     fullName: fullName,
+    //     title: title,
+    //     category: category,
+    //     image: image,
+    //     content:content,
+    //     likeCount:likeCount
+    // }
+
+    stories[index].likeCount= ++likeCount;
+
+    // stories[index]={
+    //     id:stories[index].id,
+    //     fullName: fullName || stories[index].fullName,
+    //     title: title || stories[index].title,
+    //     category: category || stories[index].category,
+    //     image: image || stories[index].image,
+    //     content:content||stories[index].content,
+    //     likeCount: likeCount||stories[likeCount].likeCount
+    //     }
+    res.status(200).json(stories[index])
+
+}
+
 module.exports ={
     getStories,
     addStory,
@@ -84,5 +115,6 @@ module.exports ={
     getStory,
     getAdminStatus,
     adminLogin,
-    adminLogout
+    adminLogout,
+    editLikeCount
 }

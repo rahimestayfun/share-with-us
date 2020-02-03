@@ -1,4 +1,5 @@
 import React from "react";
+// import LikeButton from '../LikeButton/LikeButton'
 import "../../styles/StoryCard.css";
 // import DetailedStoryCard from "../DetailedStoryCard/DetailedStoryCard";
 import { Link } from "react-router-dom";
@@ -13,11 +14,10 @@ class StoryCard extends React.Component {
 
   render() {
     // const { showDetailStatus } = this.state;
-    const { image, title, fullName, id, content } = this.props;
+    const { image, title, fullName, id, content, likeCount } = this.props;
     let firstSentence = content.split(".")[0];
 
     return (
-      
       <Link to={`/stories/${id}`} className="showLink">
         <article key={id} className="storyCard">
           <figure className="story-image-container">
@@ -32,14 +32,18 @@ class StoryCard extends React.Component {
             </div>
             <ul className="name-container">
               <li>
-              <img
-                id="avatar"
-                alt="avatar"
-                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-              />
+                <img
+                  id="avatar"
+                  alt="avatar"
+                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                />
               </li>
               <li>
-              <p id="author">{fullName}</p>
+                <p id="author">{fullName}</p>
+              </li>
+              <li className="like-container">
+                <span role="img" aria-label="like">❤️</span>
+                <span>{likeCount}</span>
               </li>
             </ul>
           </aside>

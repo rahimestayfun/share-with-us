@@ -33,9 +33,11 @@
   margin: 20px auto;
 }
 .avatar-name-container {
-  float: right;
+  /* float: right; */
   display: flex;
   color: rgb(117, 115, 115);
+  align-items:center;
+  justify-content: flex-end;
   margin-bottom: 10px;
 }
 li {
@@ -81,16 +83,10 @@ button {
   border-radius: 5px;
   background-color: rgb(214, 211, 211);
 }
-.like-container{
-  margin: auto;
-  padding-top: 10px;
-  padding-left: 20px;
-  box-sizing: border-box;
 
-}
-.name-container{
+/* .fname-container{
   margin: auto;
-}
-.avatar-container{
+} */
+/* .avatar-container{
   padding: auto;
-}
+} */

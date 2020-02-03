@@ -4,6 +4,7 @@ let stories = [
     title: "That was my first but best experience",
     fullName: "Natalie Thompson",
     category: "Business Development/Marketing/Sales",
+    likeCount:0,
     image:
       "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
     content:
@@ -11,9 +12,10 @@ let stories = [
   },
   {
     id: 1,
-    title: "Full of both independence and dependence",
+    title: "Full of both indipendence and dependence",
     fullName: "Emilie Johnson",
     category: "Hospitality and Tourism",
+    likeCount:0,
     image:
       "https://images.unsplash.com/photo-1553365857-9cc1a715084f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1156&q=80",
     content:
@@ -24,6 +26,7 @@ let stories = [
     title: "The beginning of the new world.",
     fullName: "Sally Burnside",
     category: "Information Technology",
+    likeCount:0,
     image:
       "https://images.unsplash.com/photo-1502771150995-a933810953ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
     content:
@@ -34,6 +37,7 @@ let stories = [
     fullName: "Tom Patterson",
     title: "Cheers to the work life.",
     category: "MarketingBusiness Development/Marketing/Sales",
+    likeCount:0,
     image:
       "https://images.unsplash.com/photo-1513257667190-565230ff0364?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
     content:
@@ -44,6 +48,7 @@ let stories = [
     title: "Landing my first job",
     fullName: "Miguel Armstrong",
     category: "Learning and Development",
+    likeCount:0,
     image:
       "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80",
     content:
@@ -55,6 +60,7 @@ let stories = [
     title: "Putting career change into gear",
     fullName: "Emilie Johnson",
     category: "Finance",
+    likeCount:0,
     image:
       "https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=641&q=80",
     content:
@@ -65,6 +71,7 @@ let stories = [
     fullName: "Frank Smith",
     title: "First day experience",
     category: "Information Technology",
+    likeCount:0,
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
     content:
