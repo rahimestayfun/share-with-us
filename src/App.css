@@ -8,13 +8,13 @@
   /* height: 200px; */
   /* text-align: center; */
   margin-bottom: 50px;
-  padding-top: 10px;
+  padding-top: 30px;
   box-sizing: border-box;
   margin-top: -12px;
 }
 .admin {
   /* height: 30px; */
-  border: 1px solid rgb(207, 202, 202);
+  border: 1px solid rgb(182, 177, 177);
   border-radius: 4px;
   background-color: white;
   padding: 8px;
@@ -22,7 +22,8 @@
   font-size: 20px;
   color: rgb(141, 136, 136);
   position: absolute;
-  right: 10px;
+  right: -10px;
+  top: 20px;
 }
 
 .quote-add-container {
@@ -31,26 +32,53 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  /* margin-top: 10px; */
   /* padding: 10px; */
   /* box-sizing: border-box; */
+  /* margin-bottom: -40px; */
 }
 .quote-container {
-  width: 1000px;
-  margin-bottom: 30px;
-  text-align: center;
+  width: 1050px;
+  height:100px ;
+  /* margin-bottom: 30px; */
+  /* text-align: center; */
+  background-color: white;
+  /* display: flex;
+  justify-content: center; */
+  /* align-items: center; */
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.18);
+  padding:15px;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 #quote {
-  font-size: 18px;
+  display:block;
+  font-size: 22px;
+}
+#quote-author{
+  float: right;
 }
 
 #add {
   /* margin: 10px auto; */
   font-size: 20px;
-  padding: 8px;
+  /* padding: 8px; */
   box-sizing: border-box;
-  background-color: rgb(186, 229, 215);
+  /* background-color: rgb(186, 229, 215); */
+  /* background-color:rgb(240, 186, 208); */
+  background-color:rgb(161, 196, 241);
   border-radius: 5px;
+}
+#add:hover{
+  background-color:gray;
+  color: white;
+}
+.admin:hover{
+  background-color:gray;
+  color: white;
 }
 #search {
   width: 22%;
@@ -59,7 +87,7 @@
   border: 1px solid rgb(218, 211, 211);
   text-align: center;
   font-size: 20px;
-  margin-left: 1300px;
+  margin-left: 1310px;
   /* margin-top:-30px */
   /* float: right; */
   

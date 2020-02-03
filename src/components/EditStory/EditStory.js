@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../Header/Header"
 import axios from "axios";
 import { Redirect,Link } from "react-router-dom";
 import "../../styles/EditStory.css";
@@ -74,7 +75,8 @@ class EditStory extends React.Component {
 
     return (
       <main>
-        <div className="header"></div>
+        <Header/>
+        {/* <div className="header"></div> */}
       <div className="edit-container">
         <label>What's your name</label>
         <textarea
@@ -109,6 +111,7 @@ class EditStory extends React.Component {
           <option >Health Industry</option>
           <option >Hospitality and Tourism</option>
           <option >Information Technology</option>
+          <option >Architecture and Construction</option>
         </select>
         <label>Do you have any image about that work?</label>
         <textarea

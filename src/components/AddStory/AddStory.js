@@ -1,7 +1,10 @@
 import React from "react";
+import Header from '../Header/Header';
+import Footer from "../Footer/Footer"
 import "../../styles/AddStory.css";
 import axios from 'axios';
-import {Redirect} from 'react-router-dom';
+import Recaptcha from 'react-recaptcha';
+import {Redirect,Link} from 'react-router-dom';
 class AddStory extends React.Component {
   constructor() {
     super();
@@ -11,7 +14,8 @@ class AddStory extends React.Component {
       content:"",
       image:"",
       category:"",
-      redirect: false
+      redirect: false,
+      isVerified:false
     };
   }
   handleInputChange=(e)=>{
@@ -22,14 +26,24 @@ class AddStory extends React.Component {
 
   handleAdd=(e)=>{
     e.preventDefault();
-    let {fullName,title,content,image,category}= this.state;
+    let {fullName,title,content,image,category,isVerified}= this.state;
     let newStory = {fullName,title,content,image,category};
-    axios.post('/api/stories',newStory).then(() => {
-      this.setState({redirect:true})
-    })
-    
+    if(isVerified){
+      axios.post('/api/stories',newStory).then(() => {
+        this.setState({redirect:true})
+      })
+    }else{
+      alert("Please, verify that you're a human!")
+    }
   }
-
+  recaptchaLoaded=()=>{
+    console.log("captcha successfully loaded.")
+  }
+  verifyRecaptcha=(response)=>{
+    if(response){
+      this.setState({isVerified:true})
+    }
+  }
 
   render() {
     if(this.state.redirect === true){
@@ -37,7 +51,8 @@ class AddStory extends React.Component {
     }
     return (
       <main>
-        <div className="header"></div>
+        {/* <div className="header"></div> */}
+        <Header/>
       <form className="formContainer">
         {/* <h2>Let's Start</h2> */}
         <label htmlFor="name">What's your name? </label>
@@ -58,11 +73,22 @@ class AddStory extends React.Component {
           <option >Health Industry</option>
           <option >Hospitality and Tourism</option>
           <option >Information Technology</option>
+          <option >Architecture and Construction</option>
         </select>
         <label htmlFor="dd">Which image represents that day?</label>
         <textarea id="image" onChange={this.handleInputChange} name="image" value={this.state.image}></textarea>
+        <Recaptcha
+             sitekey="6LctW9UUAAAAAM9fMF7QezV7g39PjF3UMSnmkePa"
+             render="explicit"
+             onloadCallback={this.recaptchaLoaded}
+             verifyCallback={this.verifyRecaptcha}
+        />
+        <div className="button-list">
         <button onClick={this.handleAdd} id="add-button">Share</button>
+        <Link to="/"><button id="cancel-button">Cancel</button></Link>
+        </div>
       </form>
+      <Footer/>
       </main>
     );
   }

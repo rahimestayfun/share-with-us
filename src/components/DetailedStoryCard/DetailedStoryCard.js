@@ -1,4 +1,6 @@
 import React from "react";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer"
 
 import "./../../styles/DetailedStoryCard.css";
 import axios from "axios";
@@ -39,7 +41,8 @@ class DetailedStoryCard extends React.Component {
     // console.log(story)
     return (
       <main>
-        <div className="header"></div>
+        {/* <div className="header"></div> */}
+        <Header/>
         <section id={story.id} className="detailedStory">
           <Link to="/">
             <h1 id="exit">X</h1>
@@ -55,7 +58,7 @@ class DetailedStoryCard extends React.Component {
               />
             </li>
             <li>
-              <h3>{story.fullName} </h3>
+              <h3 id="username">{story.fullName} </h3>
             </li>
           </ul>
 
@@ -73,6 +76,7 @@ class DetailedStoryCard extends React.Component {
         
           ) : null}
         </section>
+        <Footer/>
       </main>
     );
   }

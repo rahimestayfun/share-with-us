@@ -3,10 +3,10 @@ import "../../styles/Footer.css"
 
 function Footer(){
     let currentTimeLine = new Date();
-    let currentYear =currentTimeLine.getFullYear
+    let currentYear =currentTimeLine.getFullYear()
     return(
         <div className="footer">
-            <h3>{currentYear}</h3>
+            <p>	&copy;{currentYear}   Sto-repo-ry</p>
         </div>
     )
 }

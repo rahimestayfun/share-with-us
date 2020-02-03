@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../Header/Header"
 import './../../styles/AdminLogin.css'
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -27,7 +28,8 @@ class AdminLogin extends React.Component {
     // console.log(this.state.isAdmin);
     return (
       <main>
-        <div className="header"></div>
+        {/* <div className="header"></div> */}
+        <Header/>
 
       <div className="login">
         <h3>Admin Login</h3>

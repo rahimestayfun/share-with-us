@@ -1,5 +1,5 @@
 let stories = require('./../stories');
-let id = 3;
+let id = 6;
 let adminInfo = require('../admin');
 
 
