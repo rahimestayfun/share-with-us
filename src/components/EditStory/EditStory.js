@@ -121,9 +121,9 @@ class EditStory extends React.Component {
           onChange={this.imageChange}
         />
         <div className="buttons">
-        <button id="save-button" onClick={() => this.handleEdit(story.id)}>Save </button>
+        <button onClick={() => this.handleEdit(story.id)} id="save-buttonE">Save </button>
         <Link to={`/stories/${story.id}`} className="showLink">
-        <button>Cancel</button>
+        <button id="cancel-button-E">Cancel</button>
         </Link>
         </div>
       </div>

@@ -6,7 +6,7 @@
 
 .detailedStory {
   width: 850px;
-  padding:40px 40px 100px 40px;
+  padding: 40px 40px 100px 40px;
   box-sizing: border-box;
   /* display: flex;
   flex-direction: column;
@@ -19,62 +19,78 @@
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.58);
   background-color: #f9f9fa;
 }
-#detailedSTitle{
-    font-size: 40px;
-    /* margin:0 auto; */
-    
-    /* border: 1px solid black; */
-    display: inline;
+#detailedSTitle {
+  font-size: 40px;
+  /* margin:0 auto; */
+
+  /* border: 1px solid black; */
+  display: inline;
 }
 
 #detailedSImage {
   width: 100%;
   height: 400px;
-  margin:20px auto
+  margin: 20px auto;
 }
 .avatar-name-container {
-    float: right;
-    display: flex;
-    color: rgb(117, 115, 115);
-    margin-bottom: 10px;
-  }
-  li {
-    list-style-type: none;
-    margin: 5px;
-  }
-
-  #avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-  }
-
-#detailedSContent{
-    width: 100%;
-    /* margin-top: 10px; */
-    display: inline-block;
-    line-height: 25px;
-    font-size: 18px;
-
+  float: right;
+  display: flex;
+  color: rgb(117, 115, 115);
+  margin-bottom: 10px;
 }
-#exit{
-    position: relative;
-    /* top: 0px; */
-    float: right;
-    /* margin-right: -20px; */
-    color: rgb(77, 75, 75);
-    font-size: 2rem;
+li {
+  list-style-type: none;
+  margin: 5px;
 }
-.button-container{
-    /* display: flex;
+
+#avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+#like-button {
+  font-size: 10px;
+  /* margin-top:  */
+}
+#detailedSContent {
+  width: 100%;
+  /* margin-top: 10px; */
+  display: inline-block;
+  line-height: 25px;
+  font-size: 18px;
+}
+#exit {
+  position: relative;
+  /* top: 0px; */
+  float: right;
+  /* margin-right: -20px; */
+  color: rgb(77, 75, 75);
+  font-size: 2rem;
+}
+.button-container {
+  /* display: flex;
     justify-content:space-around; */
-    text-align: center;
+  text-align: center;
 }
-button{
-    margin: 20px;
-    font-size: 20px;
-    padding: 5px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    background-color: rgb(214, 211, 211);
+button {
+  margin: 20px;
+  font-size: 20px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: rgb(214, 211, 211);
+}
+.like-container{
+  margin: auto;
+  padding-top: 10px;
+  padding-left: 20px;
+  box-sizing: border-box;
+
+}
+.name-container{
+  margin: auto;
+}
+.avatar-container{
+  padding: auto;
 }

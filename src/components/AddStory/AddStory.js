@@ -53,10 +53,10 @@ class AddStory extends React.Component {
       <main>
         {/* <div className="header"></div> */}
         <Header/>
-      <form className="formContainer">
+      <form className="formContainer" >
         {/* <h2>Let's Start</h2> */}
         <label htmlFor="name">What's your name? </label>
-        <textarea type="text" name="fullName" id="name" onChange={this.handleInputChange} value={this.state.fullName} ></textarea>
+        <textarea type="text" name="fullName" id="name" onChange={this.handleInputChange} value={this.state.fullName}></textarea>
         <label htmlFor="feeling">How was your first day at work?</label>
         <textarea name="content" id="content" onChange={this.handleInputChange} value={this.state.content}></textarea>
         <label htmlFor="sentence">What is the best title for your first day?</label>

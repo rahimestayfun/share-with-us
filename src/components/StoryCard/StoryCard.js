@@ -43,7 +43,6 @@ class StoryCard extends React.Component {
               </li>
             </ul>
           </aside>
-          {/* <Link to={`/stories/${id}`}><button>Show More</button></Link> */}
         </article>
       </Link>
     );

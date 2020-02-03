@@ -53,7 +53,7 @@ label {
 .buttons {
   text-align: center;
 }
-button {
+#cance-button-E,#save-button-E{
   font-size: 20px;
   font-weight: 500;
   padding: 8px;
