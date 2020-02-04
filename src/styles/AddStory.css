@@ -10,7 +10,7 @@
     margin-bottom: 15px;
 } */
 .formContainer {
-  width: 800px;
+  width: 700px;
   background-color: #f3f3f5;
   -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.70);
   -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.70);
@@ -29,13 +29,13 @@ label{
     font-weight: 500;
 }
 #name{
-    width:400px ;
+    width:250px ;
 }
 #title{
-    width:750px ;    
+    width:650px ;    
 }
 #content{
-    width: 750px;
+    width: 650px;
     height: 220px;    
     font-size: 17px;
     padding:10px;
@@ -43,10 +43,10 @@ label{
     margin: 15px;
 }
 #category{
-    width: 350px;
+    width: 250px;
 }
 #image{
-    width:750px ;
+    width:650px ;
 
 }
 

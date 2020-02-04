@@ -1,11 +1,5 @@
-/* .header {
-  width: 100%;
-  height: 60px;
-  background-color: rgb(186, 229, 215);
-} */
-
 .detailedStory {
-  width: 850px;
+  width: 700px;
   padding: 40px 40px 100px 40px;
   box-sizing: border-box;
   /* display: flex;
@@ -20,7 +14,7 @@
   background-color: #f9f9fa;
 }
 #detailedSTitle {
-  font-size: 40px;
+  font-size: 30px;
   /* margin:0 auto; */
 
   /* border: 1px solid black; */
@@ -29,7 +23,7 @@
 
 #detailedSImage {
   width: 100%;
-  height: 400px;
+  height: 350px;
   margin: 20px auto;
 }
 .avatar-name-container {
@@ -60,14 +54,16 @@ li {
   /* margin-top: 10px; */
   display: inline-block;
   line-height: 25px;
-  font-size: 18px;
+  font-size: 16px;
 }
 #exit {
   position: relative;
   /* top: 0px; */
   float: right;
+  margin-top: -30px;
+  margin-right:-30px;
   /* margin-right: -20px; */
-  color: rgb(77, 75, 75);
+  color:red;
   font-size: 2rem;
 }
 .button-container {
