@@ -1,5 +1,5 @@
 ## Storepo
-*It a blog site that anyone can share their first day experience at work with everyone. The website was built with Html, Css, and React and Recaptcha verification was used to verify the blogger.*
+*It is a blog site that anyone can share their first day experience at work with everyone. The website was built with Html, Css, React, React-router-dom and Recaptcha verification was used to verify the blogger.*
 ## Screenshots
 
 #### Home view
