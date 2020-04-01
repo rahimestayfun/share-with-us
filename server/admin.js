@@ -1,6 +1,6 @@
 let admin = {
-    username: 'easy',
-    password: 'qwe',
+    username: 'admin',
+    password: 'asd',
     isAdmin: false,
 }
 

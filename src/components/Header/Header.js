@@ -5,8 +5,7 @@ import './../../styles/Header.css';
 function Header(){
     return(
         <div className="headerContainer">
-          <Link to="/" id="storepory"> <h1 id="storyTitle">Sto-repo-ry</h1></Link>
-            {/* <input id="input" placeholder="Search for category"></input> */}
+          <Link to="/" id="storepory"> <h1 id="storyTitle">Storepory</h1></Link>
         </div>
     )
 }

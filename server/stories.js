@@ -1,7 +1,7 @@
 let stories = [
   {
     id: 0,
-    title: "That was my first but best experience",
+    title: "That was my first, but best experience",
     fullName: "Natalie Thompson",
     category: "Business Development/Marketing/Sales",
     likeCount:0,
@@ -12,7 +12,7 @@ let stories = [
   },
   {
     id: 1,
-    title: "Full of both indipendence and dependence",
+    title: "Full of both independence and dependence",
     fullName: "Emilie Johnson",
     category: "Hospitality and Tourism",
     likeCount:0,

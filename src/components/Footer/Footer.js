@@ -6,7 +6,7 @@ function Footer(){
     let currentYear =currentTimeLine.getFullYear()
     return(
         <div className="footer">
-            <p>	&copy;{currentYear}   Sto-repo-ry</p>
+            <p>	&copy;{currentYear}   Storepory</p>
         </div>
     )
 }
